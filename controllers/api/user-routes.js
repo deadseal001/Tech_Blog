@@ -1,6 +1,6 @@
 const router = require("express").Router();
-const { react } = require("@babel/types");
-const { title } = require("process");
+// const { react } = require("@babel/types");
+// const { title } = require("process");
 const { User, Post, Comment } = require("../../models");
 
 //get all users
