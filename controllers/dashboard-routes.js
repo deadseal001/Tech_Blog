@@ -6,13 +6,27 @@ router.get("/", withAuth, (req, res) => {
   console.log(req.session);
   Post.findAll({
     where: {
-      user_id: req.session.user_id,
+      user_id: req.session.userId,
     },
+    include: [
+      {
+        model: User,
+        attributes: ["username"],
+      },
+      {
+        model: Comment,
+        attributes: ["id", "comment_text", "post_id", "user_id", "created_at"],
+        include: {
+          model: User,
+          attributes: ["username"],
+        },
+      },
+    ],
   })
     .then((dbdata) => {
-      const blogs = dbdata.map((post) => post.get({ plain: true }));
-      console.log(blogs);
-      res.render("dashboard", { blogs, loggedIn: true });
+      const posts = dbdata.map((post) => post.get({ plain: true }));
+      console.log(posts);
+      res.render("dashboard", { posts, loggedIn: true });
     })
     .catch((err) => {
       console.log(err);
@@ -25,7 +39,6 @@ router.get("/edit/:id", withAuth, (req, res) => {
     include: [
       {
         model: Comment,
-        attributes: ["id", "comment_text", "post_id", "user_id", "created_at"],
         include: {
           model: User,
           attributes: ["username"],
@@ -40,7 +53,7 @@ router.get("/edit/:id", withAuth, (req, res) => {
     .then((dbdata) => {
       if (dbdata) {
         const post = dbdata.get({ plain: true });
-
+        console.log(post);
         res.render("edit-post", {
           post,
           loggedIn: true,
@@ -55,4 +68,4 @@ router.get("/edit/:id", withAuth, (req, res) => {
     });
 });
 
-module.exports = routes;
+module.exports = router;

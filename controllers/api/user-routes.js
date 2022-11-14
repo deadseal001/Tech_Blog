@@ -1,6 +1,4 @@
 const router = require("express").Router();
-// const { react } = require("@babel/types");
-// const { title } = require("process");
 const { User, Post, Comment } = require("../../models");
 
 //get all users
@@ -54,6 +52,7 @@ router.get("/:id", (req, res) => {
 });
 
 router.post("/", (req, res) => {
+  console.log("-----------signup-------------");
   User.create({
     username: req.body.username,
     password: req.body.password,
@@ -73,6 +72,8 @@ router.post("/", (req, res) => {
 });
 
 router.post("/login", (req, res) => {
+  console.log("---------login--------");
+  console.log(req.body.username);
   User.findOne({
     where: {
       username: req.body.username,
@@ -102,16 +103,18 @@ router.post("/login", (req, res) => {
 });
 
 router.post("/logout", (req, res) => {
+  console.log("--------logout---------");
   if (req.session.loggedIn) {
     req.session.destroy(() => {
-      res.status(204).redirect("/").end(); //redirect??
+      res.status(204).end();
     });
   } else {
-    res.statsus(404).redirect("/").end(); //redirect??
+    res.statsus(404).end();
   }
 });
 
 router.put("/:id", (req, res) => {
+  console.log("---------------user put id---------------");
   User.update(req.body, {
     individualHooks: true,
     where: {
@@ -132,6 +135,7 @@ router.put("/:id", (req, res) => {
 });
 
 router.delete("/:id", (req, res) => {
+  console.log("------------users delete id---------------");
   User.destroy({
     where: {
       id: req.params.id,
