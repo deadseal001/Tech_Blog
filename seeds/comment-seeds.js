@@ -48,18 +48,18 @@ const commentdata = [
     comment_text:
       "Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat.",
     user_id: 6,
-    post_id: 12,
+    post_id: 5,
   },
   {
     comment_text: "Morbi a ipsum.",
     user_id: 6,
-    post_id: 20,
+    post_id: 4,
   },
   {
     comment_text:
       "Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam.",
     user_id: 3,
-    post_id: 14,
+    post_id: 7,
   },
   {
     comment_text: "Donec ut mauris eget massa tempor convallis.",
