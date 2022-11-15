@@ -58,11 +58,15 @@ router.post("/", (req, res) => {
     password: req.body.password,
   })
     .then((dbdata) => {
+      console.log(dbdata.id, dbdata.username);
       req.session.save(() => {
         req.session.userId = dbdata.id;
         req.session.username = dbdata.username;
         req.session.loggedIn = true;
-        res.json(dbdata);
+        res.json({
+          user: dbdata,
+          message: "You are now logged in as " + dbdata.username + " !",
+        });
       });
     })
     .catch((err) => {
@@ -79,6 +83,7 @@ router.post("/login", (req, res) => {
       username: req.body.username,
     },
   }).then((dbdata) => {
+    console.log(dbdata);
     if (!dbdata) {
       res.status(404).json({ message: "No user account found!" });
       return;

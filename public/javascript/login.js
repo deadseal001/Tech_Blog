@@ -10,11 +10,9 @@ const loginFormHandler = async function (event) {
       password: passwordEl.value.trim(),
     }),
     headers: { "Content-Type": "application/json" },
-  })
-    .then(function () {
-      document.location.replace("/dashboard");
-    })
-    .catch((err) => console.log(err));
+  }).then(function () {
+    document.location.replace("/dashboard");
+  });
 };
 
 document

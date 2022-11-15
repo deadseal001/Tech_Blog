@@ -59,7 +59,11 @@ router.get("/post/:id", (req, res) => {
     }
     const posts = dbdata.get({ plain: true });
     console.log(posts);
-    res.render("single-post", { posts, loggedIn: req.session.loggedIn });
+    res.render("single-post", {
+      posts,
+      loggedIn: req.session.loggedIn,
+      userID: req.session.userId,
+    });
   });
 });
 
