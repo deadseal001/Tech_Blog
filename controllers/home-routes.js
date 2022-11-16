@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { ConnectionTimedOutError } = require("sequelize");
+// const { ConnectionTimedOutError } = require("sequelize");
 const { Post, Comment, User } = require("../models");
 
 // get all Blogs for homepage

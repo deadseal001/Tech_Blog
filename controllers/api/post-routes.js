@@ -43,6 +43,7 @@ router.get("/:id", (req, res) => {
           model: User,
           attributes: ["username"],
         },
+        sort: [updatedAt, descending],
       },
       {
         model: User,
