@@ -20,6 +20,7 @@ router.get("/", (req, res) => {
         attributes: ["username"],
       },
     ],
+    order: [["updatedAt", "DESC"]], // why this is not working
   })
     .then((dbdata) => res.json(dbdata))
     .catch((err) => {
@@ -65,9 +66,10 @@ router.get("/:id", (req, res) => {
 });
 
 router.post("/", withAuth, (req, res) => {
+  console.log("--------------router post/api/post---------------");
   const body = req.body;
   console.log(req.session.userId);
-  Post.create({ ...body, userId: req.session.userId })
+  Post.create({ ...body, user_id: req.session.userId })
     .then((newPost) => {
       res.json(newPost);
     })
@@ -105,8 +107,8 @@ router.put("/:id", withAuth, (req, res) => {
 });
 
 router.delete("/:id", withAuth, (req, res) => {
-  console(req.body);
-  Post.update(req.body, {
+  console.log("---------------router delete /api/:id----------------");
+  Post.destroy({
     where: {
       id: req.params.id,
     },

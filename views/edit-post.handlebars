@@ -5,15 +5,20 @@
   </h2>
   <form class="edit-post-form">
     <div>
-      <input name="post-title" type="text" value="{{post.title}}" />
-      <input name="post-content" type="text" value="{{post.content}}" />
+      <lable> Title</lable>
+      <textarea name="post-title" type="text">{{post.title}}</textarea>
     </div>
     <div>
-      <a href="/post/{{post.id}}">{{post.comments.length}} {{format_plural "comment" post.comments.length}}</a>
+      <lable>Content</lable>
+      <textarea name="post-content" type="text" class="post-content">{{post.content}}</textarea>
     </div>
-    <button type="submit">Save post</button>
-    <button type="button" class="delete-post-btn">Delete post</button>
+    {{!-- <div>
+      <a href="/post/{{post.id}}">{{post.comments.length}} {{format_plural "comment" post.comments.length}}</a>
+    </div> --}}
+    <button type="submit" class="delete-post-btn">Save post</button>
+    <button type="button" class="delete-post-btn delbtn">Delete post</button>
   </form>
+
 </article>
 
 {{!-- <form class="comment-form">
@@ -28,6 +33,4 @@
 
 {{> comments post.comments}}
 
-<script src="/javascript/edit-post.js"></script>
-<script src="/javascript/delete-post.js"></script>
-<script src="/javascript/comment.js"></script>
+<script src="/javascript/editdelete-post.js"></script>
