@@ -39,39 +39,32 @@ footer {
   opacity: 0.6;
 }
 
-.new-post-form {
-  display: table;
-}
-.new-post-form div {
-  display: table-row;
-}
-.new-post-form label {
-  display: table-cell;
-}
-.new-post-form input {
-  display: table-cell;
-  width: 400px;
-}
-
-.edit-post-form {
-  display: table;
-  margin: 5%;
-}
-.edit-post-form div {
-  display: table-row;
-  margin-top: 2%;
-}
-.edit-post-form label {
-  display: table-cell;
-}
-.edit-post-form textarea {
-  display: table-cell;
-  width: 400px;
-}
-
 .delete-post-btn {
   margin: 1%;
+}
+.postbtn {
+  margin: 2%;
 }
 .post-content {
   height: 150px;
 }
+
+.addcomment {
+  width: 100%;
+}
+
+/* #username-input-login {
+  width: 150px;
+}
+
+#password-input-login {
+  width: 150px;
+} */
+
+/* .login-form {
+  width: 200px;
+}
+
+.signup-form {
+  width: 200px;
+} */

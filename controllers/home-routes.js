@@ -58,11 +58,20 @@ router.get("/post/:id", (req, res) => {
       return;
     }
     const posts = dbdata.get({ plain: true });
-    console.log(posts);
+    const sameornot = (a, b) => {
+      if (a === b) {
+        return true;
+      } else {
+        return false;
+      }
+    };
+    let same = sameornot(req.session.userId, posts.user_id);
+    console.log(posts, same);
     res.render("single-post", {
       posts,
       loggedIn: req.session.loggedIn,
       userID: req.session.userId,
+      sameuser: same,
     });
   });
 });

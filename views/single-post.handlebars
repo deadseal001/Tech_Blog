@@ -1,13 +1,29 @@
-{{> post-info posts}}
+<a href="/dashboard" class="mx-5"> &larr; Back to dashboard</a>
+<article class="post mx-5 my-2 p-4 border rounded">
+  <div class="title">
+    <h4 target="_blank"><a href="/post/{{posts.id}}">{{posts.title}}</a></h4>
+    <p>{{posts.content}}</p>
+  </div>
+  <div class="meta">
+    by {{posts.user.username}} on {{format_date posts.createdAt}}
+    |
+    <a href="/post/{{id}}">{{posts.comments.length}} {{format_plural "comment" posts.comments.length}}</a>
+    {{same}}
+    {{#if sameuser}}
+    |
+    <a href="/dashboard/edit/{{posts.id}}" class="edit-link">Edit/Delete</a>
+    {{/if}}
+  </div>
+</article>
 
 {{#if loggedIn}}
-<form class="comment-form" data-userID="{{userID}}">
+<form class="comment-form mx-5 mt-4" data-userID="{{userID}}">
   <div>
-    <textarea name="comment-body"></textarea>
+    <textarea name="comment-body" class="addcomment" placeholder="add comments here"></textarea>
   </div>
 
   <div>
-    <button type="submit" class="btn btn-primary">Add comment</button>
+    <button type="submit" class="btn mt-3 btn-primary">Add comment</button>
   </div>
 </form>
 {{/if}}

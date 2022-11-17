@@ -31,7 +31,7 @@ router.get("/", (req, res) => {
 
 router.get("/:id", (req, res) => {
   console.log("-----------get single posts------------");
-  Post.findAll({
+  Post.findOne({
     where: {
       id: req.params.id,
     },
@@ -44,7 +44,7 @@ router.get("/:id", (req, res) => {
           model: User,
           attributes: ["username"],
         },
-        sort: [updatedAt, descending],
+        sort: [updatedAt, descending], //notworking
       },
       {
         model: User,

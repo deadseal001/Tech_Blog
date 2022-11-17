@@ -1,16 +1,18 @@
 <section>
-    <h2>Create New Blog</h2>
 
-    <form class="new-post-form" data-postuserID="{{userID}}">
-        <div>
+
+    <form class="new-post-form mx-5" data-postuserID="{{userID}}">
+        <a href="/dashboard"> &larr; Back to dashboard</a>
+        <h2>Create New Blog</h2>
+        <div class="d-flex flex-column my-2">
             <label for="post-title">Title</label>
-            <input type="text" id="post-title" name="post-title" />
+            <textarea type="text" class="post-title" name="post-title"></textarea>
         </div>
-        <div>
+        <div class="d-flex flex-column">
             <label for="post-content">Content</label>
-            <input type="text" id="post-content" name="post-content" />
+            <textarea type="text" class="post-content" name="post-content"></textarea>
         </div>
-        <button type="submit" class="new-post-form">Submit blog</button>
+        <button type="submit" class="new-post-form postbtn btn-primary">Create blog</button>
     </form>
 
     <script src="/javascript/add-post.js"></script>

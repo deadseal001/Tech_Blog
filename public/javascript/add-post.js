@@ -1,12 +1,14 @@
 async function newFormHandler(event) {
   event.preventDefault();
 
-  const title = document.querySelector('input[name="post-title"]').value.trim();
+  const title = document
+    .querySelector('textarea[name="post-title"]')
+    .value.trim();
   // const userID = document
   //   .querySelector(".new-post-form")
   //   .getAttribute("data-postuserID");
   const content = document
-    .querySelector('input[name="post-content"]')
+    .querySelector('textarea[name="post-content"]')
     .value.trim();
   if (!title || !content) {
     alert("Please input both title and content!");

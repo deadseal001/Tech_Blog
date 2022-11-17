@@ -1,11 +1,16 @@
-<article class="post mx-3 my-2 p-4 border rounded">
+<article class="post mx-5 my-2 p-4 border rounded">
   <div class="title">
-    <h4  target="_blank"><a href="/post/{{id}}">{{title}}</a></h4>
+    <h4 target="_blank"><a href="/post/{{id}}">{{title}}</a></h4>
     <p>{{content}}</p>
   </div>
   <div class="meta">
-     by {{user.username}} on {{format_date createdAt}}
+    by {{user.username}} on {{format_date createdAt}}
     |
     <a href="/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
+    {{same}}
+    {{#if sameuser}}
+    |
+    <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit/Delete</a>
+    {{/if}}
   </div>
 </article>

@@ -1,19 +1,17 @@
-<form class="login-form">
-  <div>
+<form class="login-form mx-5 border rounded">
+  <div class="d-flex flex-column m-4">
     <label for="username-login">username:</label>
     <input type="text" id="username-input-login" />
   </div>
-  <div>
+  <div class="d-flex flex-column mx-4 my-2">
     <label for="password-login">password:</label>
     <input type="password" id="password-input-login" />
   </div>
-  <div>
-    <button type="submit">Login</button>
+  <div class="m-3 d-flex justify-content-around">
+    <button type="submit" class="btn-primary rounded">Login</button>
+    <a href="/signup"> Sign Up</a>
   </div>
 
-  <div>
-    <a href="/signup">Sign Up</a>
-  </div>
+
 </form>
- <script src="/javascript/login.js"></script>
- 
+<script src="/javascript/login.js"></script>

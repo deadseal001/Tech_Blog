@@ -2,46 +2,48 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Tech Blog</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="/stylesheets/style.css"/>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Tech Blog</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="/stylesheets/style.css" />
 </head>
+
 <body class="bg-dark text-light">
-    <header class="col-12 d-flex justify-content-between  bg-dark">
-        <div>
-        <h1 class="page-title  my-2"><a href="/">The Tech Blog</a></h1>
-        </div>
-        <nav class="d-flex justify-content-between">
-            <p class="mx-2">
-              <a href="/">Home</a>
-            </p>
-            <p class="mx-2">
-              <a href="/dashboard">Dashboard</a>
-            </p>
-            {{#if loggedIn}}
-            <p class="mx-2">
-              <a id="logout" class="text-primary">Logout</a> 
-            </p>
-            {{else}}    
-            <p class="mx-2">
-              <a href="/login">Login</a>
-            </p>
-            {{/if}}
-        </nav>
-    </header>
-    <main>
-        {{{body}}}
-    </main>
+  <header class="col-12 my-3 d-flex justify-content-between  bg-dark">
+    <div>
+      <h1 class="page-title mx-8 my-2"><a href="/">The Tech Blog</a></h1>
+    </div>
+    <nav class="d-flex justify-content-between">
+      <p class="mx-2">
+        <a href="/">Home</a>
+      </p>
+      <p class="mx-2">
+        <a href="/dashboard">Dashboard</a>
+      </p>
+      {{#if loggedIn}}
+      <p class="mx-2">
+        <a id="logout" class="text-primary">Logout</a>
+      </p>
+      {{else}}
+      <p class="mx-2">
+        <a href="/login">Login</a>
+      </p>
+      {{/if}}
+    </nav>
+  </header>
+  <main>
+    {{{body}}}
+  </main>
 
-    <footer class="d-flex justify-content-center">
-        Welcome to the Tech Blogs!
-    </footer>
+  <footer class="d-flex justify-content-center">
+    Welcome to the Tech Blogs!
+  </footer>
 
-    {{#if loggedIn}}
-    <script src="/javascript/logout.js"></script>
-    {{/if}}
+  {{#if loggedIn}}
+  <script src="/javascript/logout.js"></script>
+  {{/if}}
 </body>
+
 </html>
