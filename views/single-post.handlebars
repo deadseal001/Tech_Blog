@@ -7,7 +7,7 @@
   <div class="meta">
     by {{posts.user.username}} on {{format_date posts.createdAt}}
     |
-    <a href="/post/{{id}}">{{posts.comments.length}} {{format_plural "comment" posts.comments.length}}</a>
+    <a href="/post/{{posts.id}}">{{posts.comments.length}} {{format_plural "comment" posts.comments.length}}</a>
     {{same}}
     {{#if sameuser}}
     |

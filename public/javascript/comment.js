@@ -10,7 +10,6 @@ async function commentFormHandler(event) {
   const userID = document
     .querySelector(".comment-form")
     .getAttribute("data-userID");
-  debugger;
   console.log(commentText, post_id, userID);
   if (commentText) {
     const response = await fetch("/api/comments", {
