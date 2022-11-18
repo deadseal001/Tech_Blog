@@ -14,10 +14,7 @@ router.get("/", (req, res) => {
           model: User,
           attributes: ["username"],
         },
-        order: [["updatedAt", "DESC"]],
       },
-      "updatedAt",
-      "DESC",
       {
         model: User,
         attributes: ["username"],
@@ -46,7 +43,7 @@ router.get("/:id", (req, res) => {
           model: User,
           attributes: ["username"],
         },
-        sort: [updatedAt, descending], //notworking
+        order: [["updatedAt", "DESC"]],
       },
       {
         model: User,
