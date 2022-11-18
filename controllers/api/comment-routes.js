@@ -3,7 +3,9 @@ const { Comment } = require("../../models");
 const withAuth = require("../../utils/auth");
 
 router.get("/", (req, res) => {
-  Comment.findAll()
+  Comment.findAll({
+    order: [["updatedAt", "DESC"]],
+  })
     .then((dbdata) => res.json(dbdata))
     .catch((err) => {
       console.log(err);

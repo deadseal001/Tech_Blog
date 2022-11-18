@@ -14,13 +14,15 @@ router.get("/", (req, res) => {
           model: User,
           attributes: ["username"],
         },
+        order: [["updatedAt", "DESC"]],
       },
+      "updatedAt",
+      "DESC",
       {
         model: User,
         attributes: ["username"],
       },
     ],
-    order: [["updatedAt", "DESC"]], // why this is not working
   })
     .then((dbdata) => res.json(dbdata))
     .catch((err) => {
