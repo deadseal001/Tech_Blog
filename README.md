@@ -1,6 +1,6 @@
 # Tech_Blog
 
--[Purpose](#Purpose) -[Build_With](#Build_With) -[Usage](#Usage) -[Github](#Github) -[Screenshot](#Screenshot) -[Demo](#Demo)
+-[Purpose](#Purpose) -[Build_With](#Build_With) -[Usage](#Usage) -[Github](#Github) -[Screenshot](#Screenshot)
 
 ## Purpose
 
