@@ -31,3 +31,4 @@ https://tech-blog-wl.herokuapp.com/
 https://github.com/deadseal001/Tech_Blog
 
 ## Screenshot
+<img width="1472" alt="Screen Shot 2022-11-17 at 9 00 28 PM" src="https://user-images.githubusercontent.com/110753777/202607080-97362fb0-4b1c-48ec-8d6b-ba24af6953e7.png">
