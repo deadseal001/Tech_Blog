@@ -35,6 +35,7 @@ router.get("/:id", (req, res) => {
       id: req.params.id,
     },
     attributes: ["id", "title", "content", "created_at"],
+    order: [[{ model: Comment }, "createdAt", "DESC"]],
     include: [
       {
         model: Comment,
@@ -43,7 +44,6 @@ router.get("/:id", (req, res) => {
           model: User,
           attributes: ["username"],
         },
-        order: [["updatedAt", "DESC"]],
       },
       {
         model: User,
