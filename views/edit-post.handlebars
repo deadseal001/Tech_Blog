@@ -7,14 +7,14 @@
     </h2>
     <div class="d-flex flex-column my-2">
       <lable> Title</lable>
-      <textarea type="text" id="post-title" type="text">{{post.title}}</textarea>
+      <textarea type="text" name="post-title" type="text">{{post.title}}</textarea>
     </div>
     <div class="d-flex flex-column">
       <lable>Content</lable>
-      <textarea type="text" id="post-content" type="text" class="post-content">{{post.content}}</textarea>
+      <textarea type="text" name="post-content" type="text" class="post-content">{{post.content}}</textarea>
     </div>
     <div class="d-flex justify-content-between">
-      <button type="submit" class="delete-post-btn btn-primary">Save post</button>
+      <button type="submit" class="delete-post-btn editbtn btn-primary">Save post</button>
       <button type="button" class="delete-post-btn delbtn btn-primary">Delete post</button>
     </div>
   </form>
